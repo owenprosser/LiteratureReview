@@ -13,7 +13,7 @@
 \usepackage{filecontents}
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancy}
-\lfoot{Methods for Detecting Denial of Service Attacks on Local Networks}
+\lfoot{Methods for Detecting Denial-of-Service Attacks on Local Networks}
 \cfoot{}
 \rfoot{\thepage}
 \usepackage[belowskip=-15pt,aboveskip=0pt]{caption}
@@ -26,7 +26,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Methods for Detecting Denial of Service Attacks on Local Networks\\
+\title{Methods for Detecting Denial-of-Service Attacks on Local Networks\\
 }
 
 \author{\IEEEauthorblockN{Owen Prosser}
@@ -77,6 +77,10 @@ Lincoln, United Kingdom \\
  
     \subsection{Low-Rate Denial of Service}
     Low-rate attack traffic is generally similar to legitimate traffic; making it difficult to identify distinguish.\cite{two_layer_approach__DDOS}
+    This is because it uses a small amount of bandwidth to keep open a port on the target machine for as long as possible.
+    One method of archiving this is to send partial HTTP headers, the target machine will then keep the connection open waiting for the rest of the data to arrive.
+    Like the syn-flooding method this will also prevent the target from responding to legitimate traffic once all of the ports are occupied waiting for responses.
+    This can be a difficult attack to mitigate against as these type of intensionally slow connections are difficult to distinguish from actual users on legitimately slow connections because the traffic is very similar.\cite{cloudflare_low_rate}
 
 \section{Detection Methods}
     Detecting DoS attacks can be challenging as many techniques "face the considerable challenge of discriminating network-based flooding attacks from sudden increases in legitimate activity or flash events".\cite{detection_methods_2006}
@@ -94,10 +98,11 @@ Lincoln, United Kingdom \\
     \bibitem{CERT_DDOS}CERT Coordination Center. 1999. CERT Incident Note IN-99-04. \url{https://web.archive.org/web/20081115163511/http://www.cert.org/incident_notes/IN-99-04.html}Available at \url{https://web.archive.org/web/20081115163511/http://www.cert.org/incident_notes/IN-99-04.html}
     \bibitem{detection_methods_2006}Carl, G., Kesidis, G., Brooks, R.R. and Rai, S., 2006. Denial-of-service attack-detection techniques. IEEE Internet computing, 10(1), pp.82-89.
     \bibitem{nomaly-based_method_for_DDoS}Karimazad, R. and Faraahi, A., 2011, September. An anomaly-based method for DDoS attacks detection using RBF neural networks. In Proceedings of the International Conference on Network and Electronics Engineering (Vol. 11, pp. 44-48).
-    \bibitem{two_layer_approach__DDOS}Toklu, S. and Şimşek, M., 2018. Two-Layer Approach for Mixed High-Rate and Low-Rate Distributed Denial of Service (DDoS) Attack Detection and Filtering. Arabian Journal for Science and Engineering, 43(12), pp.7923-7931.
     \bibitem{empirical_evaluation}Bhuyan, M.H., Bhattacharyya, D.K. and Kalita, J.K., 2015. An empirical evaluation of information metrics for low-rate and high-rate DDoS attack detection. Pattern Recognition Letters, 51, pp.1-7.
     \bibitem{cloudflare_DDoS}\url{https://www.cloudflare.com/learning/ddos/application-layer-ddos-attack/}
     \bibitem{cloudflare_syn_flood}\url{https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/}
+    \bibitem{two_layer_approach__DDOS}Toklu, S. and Şimşek, M., 2018. Two-Layer Approach for Mixed High-Rate and Low-Rate Distributed Denial of Service (DDoS) Attack Detection and Filtering. Arabian Journal for Science and Engineering, 43(12), pp.7923-7931.
+    \bibitem{cloudflare_low_rate}\url{https://www.cloudflare.com/learning/ddos/ddos-low-and-slow-attack/}
 \end{thebibliography}
 
 \vspace{12pt}
