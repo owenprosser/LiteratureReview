@@ -13,7 +13,7 @@
 \usepackage{filecontents}
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancy}
-\lfoot{Does a higher quality of living contribute to a lower suicide rate?}
+\lfoot{Detecting DoS Attacks on Local Networks}
 \cfoot{}
 \rfoot{\thepage}
 \usepackage[belowskip=-15pt,aboveskip=0pt]{caption}
@@ -26,7 +26,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Detecting DoS Attacks (Working Title)\\
+\title{Methods for Detecting Denial of Service Attacks on Local Networks\\
 }
 
 \author{\IEEEauthorblockN{Owen Prosser}
@@ -39,20 +39,42 @@ Lincoln, United Kingdom \\
 \maketitle
 
 \begin{abstract}
-Write Abstract
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam orci eget tellus luctus mollis. Aliquam erat volutpat. Praesent malesuada, sapien quis vestibulum porta, felis augue vehicula massa, non laoreet turpis purus eget nunc. Phasellus faucibus metus nunc, in lacinia massa hendrerit nec. In tempus luctus justo, in placerat ex posuere sed. Vivamus convallis vitae velit quis dignissim. Phasellus placerat, ex non tempor ultricies, lacus est scelerisque augue, non commodo odio nisl in ante. Nam turpis nisl, efficitur eu rutrum at, porta vel quam. Vestibulum eget elit malesuada, feugiat ex sed, finibus nunc. Aliquam nec eros ex. Duis ut lectus.
+    \newline
 \end{abstract}
 
 \begin{IEEEkeywords}
-Machine Learning, Cyber Security, Packet Analysis
+    Denial of Service, DoS, Cyber Security
 \end{IEEEkeywords}
 
 Information Security and Network Resilience has become increasingly important as society has become reliant on technology to function.
-One example of this is the effect that cyber attacks can have on infrastructure such as Power Systems[1]. One way which networks can be disrupted is a technique known as a Denial of Service attack (DoS).
+Over the last 20 years Denial of Service attacks (Dos) have become more disruptive. The volume of attacks has increased, the distribution across the globe has become greater and they have been easier to launch \cite{20_years_of_DDOS}.
+One example of this is the effect that cyber attacks can have on infrastructure such as Power Systems \cite{DDOS_power_systems}. 
+This in conjunction with the rise in popularity of the devices considered to be a part of the Internet of Things (IoT), has lead to an increase in the ability of malicious actors to launch large scale attacks.
+
+One way which networks can be disrupted is a technique known as a Denial of Service attack (DoS).
+In addition to Denial of Service attacks there are also a similar attack called a Distributed Denial of Service attack (DDoS).
+The fist of these attacks occurred in 1999 when a botnet called 'Trin00' took down a network at the University of Minnesota. \cite{CERT_DDOS}
+
+\section{Types of Attacks}
+\subsection{Distributed Denial of Service}
+\subsection{Low-Rate Denial of Service}
+Low-rate attack traffic is generally similar to legitimate traffic; making it difficult to identify distinguish.\cite{two_layer_approach__DDOS}
+
+
+\section{Detection Methods}
+Detecting DoS attacks can be challenging as many techniques "face the considerable challenge of discriminating network-based flooding attacks from sudden increases in legitimate activity or flash events".\cite{detection_methods_2006}
+Failing to discriminate between traffic could cause a network to go offline unnecessarily.
 
 \begin{thebibliography}{00}
-\bibitem{Chen, W., Ding, D., Dong, H. and Wei, G., 2019. Distributed Resilient Filtering for Power Systems Subject to Denial-of-Service Attacks. IEEE Transactions on Systems, Man, and Cybernetics: Systems.}
-\bibitem{nomaly-based_method_for_DDoS}Karimazad, R. and Faraahi, A., 2011, September. An anomaly-based method for DDoS attacks detection using RBF neural networks. In Proceedings of the International Conference on Network and Electronics Engineering (Vol. 11, pp. 44-48).
+    \bibitem{20_years_of_DDOS}Osterweil, E., Stavrou, A. and Zhang, L., 2019. 20 Years of DDoS: a Call to Action. arXiv preprint arXiv:1904.02739.
+    \bibitem{DDOS_power_systems}Chen, W., Ding, D., Dong, H. and Wei, G., 2019. Distributed Resilient Filtering for Power Systems Subject to Denial-of-Service Attacks. IEEE Transactions on Systems, Man, and Cybernetics: Systems.
+    \bibitem{CERT_DDOS}CERT Coordination Center. 1999. CERT Incident Note IN-99-04. \url{https://web.archive.org/web/20081115163511/http://www.cert.org/incident_notes/IN-99-04.html}Available at \url{https://web.archive.org/web/20081115163511/http://www.cert.org/incident_notes/IN-99-04.html}
+    \bibitem{detection_methods_2006}Carl, G., Kesidis, G., Brooks, R.R. and Rai, S., 2006. Denial-of-service attack-detection techniques. IEEE Internet computing, 10(1), pp.82-89.
+    \bibitem{nomaly-based_method_for_DDoS}Karimazad, R. and Faraahi, A., 2011, September. An anomaly-based method for DDoS attacks detection using RBF neural networks. In Proceedings of the International Conference on Network and Electronics Engineering (Vol. 11, pp. 44-48).
+    \bibitem{two_layer_approach__DDOS}Toklu, S. and Şimşek, M., 2018. Two-Layer Approach for Mixed High-Rate and Low-Rate Distributed Denial of Service (DDoS) Attack Detection and Filtering. Arabian Journal for Science and Engineering, 43(12), pp.7923-7931.
 \end{thebibliography}
+
 \vspace{12pt}
 
 \end{document}
