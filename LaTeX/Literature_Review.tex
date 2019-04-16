@@ -75,12 +75,12 @@ Lincoln, United Kingdom \\
     Each of these packets would have a spoofed IP address so that when the target sends the syn-acknowledgement packet it is keeping a port open, waiting for a response which will never come.
     Once all of the ports of the machine are open and waiting for responses, the machine will not be able to respond to legitimate requests.\cite{cloudflare_syn_flood}
  
-    \subsection{Low-Rate Denial of Service}
-    Low-rate attack traffic is generally similar to legitimate traffic; making it difficult to identify distinguish.\cite{two_layer_approach__DDOS}
-    This is because it uses a small amount of bandwidth to keep open a port on the target machine for as long as possible.
-    One method of archiving this is to send partial HTTP headers, the target machine will then keep the connection open waiting for the rest of the data to arrive.
-    Like the syn-flooding method this will also prevent the target from responding to legitimate traffic once all of the ports are occupied waiting for responses.
-    This can be a difficult attack to mitigate against as these type of intensionally slow connections are difficult to distinguish from actual users on legitimately slow connections because the traffic is very similar.\cite{cloudflare_low_rate}
+\subsection{Low-Rate Denial of Service}
+Low-rate attack traffic is generally similar to legitimate traffic; making it difficult to identify distinguish.\cite{two_layer_approach__DDOS}
+This is because it uses a small amount of bandwidth to keep open a port on the target machine for as long as possible.
+One method of archiving this is to send partial HTTP headers, the target machine will then keep the connection open waiting for the rest of the data to arrive.
+Like the syn-flooding method this will also prevent the target from responding to legitimate traffic once all of the ports are occupied waiting for responses.
+This can be a difficult attack to mitigate against as these type of intensionally slow connections are difficult to distinguish from actual users on legitimately slow connections because the traffic is very similar.\cite{cloudflare_low_rate}
 
 \section{Detection Methods}
     Detecting DoS attacks can be challenging as many techniques "face the considerable challenge of discriminating network-based flooding attacks from sudden increases in legitimate activity or flash events".\cite{detection_methods_2006}
