@@ -52,6 +52,10 @@ Lincoln, United Kingdom \\
     One example of this is the effect that cyber attacks can have on infrastructure such as Power Systems \cite{DDOS_power_systems}. 
     This in conjunction with the rise in popularity of the devices considered to be a part of the Internet of Things (IoT), has lead to an increase in the ability of malicious actors to launch large scale attacks.
 
+    Whilst this kind of attack does not come with any risk to sensitive data which may be held on the targeted machines, it is still considered to be very disruptive.
+    In 2019 7\% of Businesses reported that the Denial-of-Service attacks were the most disruptive Cyber attack that they have fallen victim to in the last 12 months.
+    This percentage is even higher (14\%) among Information and Communications firms.\cite{government_security_survey}
+
     One way which networks can be disrupted is a technique known as a Denial of Service attack (DoS).
     Such an attack works by consuming the resources of a computer or a network of computers so that they cannot effectively perform their intended task.
     In addition to Denial of Service attacks there are also a similar attack called a Distributed Denial of Service attack (DDoS).
@@ -62,43 +66,45 @@ Lincoln, United Kingdom \\
 \subsection{Distributed Denial of Service}
     A Distributed Denial of Service attack (DDoS) is similar to a more rudimentary DoS attack and generally separated into two categories; Direct and Reflector attacks.
 
-    In a Direct attack, the attacker will flood the target host or server with a vast amount of packets from a large number of compromised hosts or machines. 
+    In a Direct attack, the attacker will flood the target host or server with a vast amount of packets from a large number of compromised hosts or machines.
     A Direct attack can then also be segmented into two more categories. There are Network Layer DDoS attacks and Applications Layer DDoS attacks.\cite{empirical_evaluation}
-    
+
     An Application layer DDoS attack is one which specifically attacks the top the layer of the OSI model, the application layer.
     These type of attacks exploit the amount of processing power used by common protocols such as HTTP/POST and HTTP/GET.
     They can cause a high computational load on the target machines without being required to send large amounts of data as each request can require a lot a processing time on the targets hardware.
     Using such a method an attacker can still have a large disruptive effect, without them needing to use as much bandwidth.\cite{cloudflare_DDoS}
 
     A network layer DDoS attack is designed to take a target computer offline by consuming all of the available network resources so that the target cannot respond to legitimate requests.
-    One example of this is SYN flooding. Using this attack, an attacker would overwhelm a target machine by repeatedly sending initial connection request (SYN) packets.
+    One example of this is SYN flooding, the most common DDoS attack technique. \cite{chnage_point_monitoring} Using this attack, an attacker would overwhelm a target machine by repeatedly sending initial connection request (SYN) packets.
     Each of these packets would have a spoofed IP address so that when the target sends the syn-acknowledgement packet it is keeping a port open, waiting for a response which will never come.
     Once all of the ports of the machine are open and waiting for responses, the machine will not be able to respond to legitimate requests.\cite{cloudflare_syn_flood}
- 
+
 \subsection{Low-Rate Denial of Service}
-Low-rate attack traffic is generally similar to legitimate traffic; making it difficult to identify distinguish.\cite{two_layer_approach__DDOS}
-This is because it uses a small amount of bandwidth to keep open a port on the target machine for as long as possible.
-One method of archiving this is to send partial HTTP headers, the target machine will then keep the connection open waiting for the rest of the data to arrive.
-Like the syn-flooding method this will also prevent the target from responding to legitimate traffic once all of the ports are occupied waiting for responses.
-This can be a difficult attack to mitigate against as these type of intensionally slow connections are difficult to distinguish from actual users on legitimately slow connections because the traffic is very similar.\cite{cloudflare_low_rate}
+    Low-rate attack traffic is generally similar to legitimate traffic; making it difficult to identify distinguish.\cite{two_layer_approach__DDOS}
+    This is because it uses a small amount of bandwidth to keep open a port on the target machine for as long as possible.
+    One method of archiving this is to send partial HTTP headers, the target machine will then keep the connection open waiting for the rest of the data to arrive.
+    Like the syn-flooding method this will also prevent the target from responding to legitimate traffic once all of the ports are occupied waiting for responses.
+    This can be a difficult attack to mitigate against as these type of intensionally slow connections are difficult to distinguish from actual users on legitimately slow connections because the traffic is very similar.\cite{cloudflare_low_rate}
 
 \section{Detection Methods}
     Detecting DoS attacks can be challenging as many techniques "face the considerable challenge of discriminating network-based flooding attacks from sudden increases in legitimate activity or flash events".\cite{detection_methods_2006}
     Failing to discriminate between traffic could cause a network to go offline unnecessarily.
 
-\subsection{Method A}
-\subsection{Method B}
-\subsection{Method C}
-
+    Most DoS protection systems are broken up into two main categories, Signature-based and Anomaly-based systems.
+    Signature-based systems inspect passing traffic and searches for already-known malicious patterns.
+    On the other hand an anomaly-based system will observe the usual patterns of network traffic and then trigger when it notices a pattern of traffic deemed to be out of the ordinary.
+    Most DoS prevention systems are anomaly based.\cite{chnage_point_monitoring}
 \section{Conclusions}
 
 \begin{thebibliography}{00}
     \bibitem{20_years_of_DDOS}Osterweil, E., Stavrou, A. and Zhang, L., 2019. 20 Years of DDoS: a Call to Action. arXiv preprint arXiv:1904.02739.
     \bibitem{DDOS_power_systems}Chen, W., Ding, D., Dong, H. and Wei, G., 2019. Distributed Resilient Filtering for Power Systems Subject to Denial-of-Service Attacks. IEEE Transactions on Systems, Man, and Cybernetics: Systems.
+    \bibitem{government_security_survey}\url{https://www.gov.uk/government/statistics/cyber-security-breaches-survey-2019}
     \bibitem{CERT_DDOS}CERT Coordination Center. 1999. CERT Incident Note IN-99-04. \url{https://web.archive.org/web/20081115163511/http://www.cert.org/incident_notes/IN-99-04.html}Available at \url{https://web.archive.org/web/20081115163511/http://www.cert.org/incident_notes/IN-99-04.html}
     \bibitem{detection_methods_2006}Carl, G., Kesidis, G., Brooks, R.R. and Rai, S., 2006. Denial-of-service attack-detection techniques. IEEE Internet computing, 10(1), pp.82-89.
     \bibitem{nomaly-based_method_for_DDoS}Karimazad, R. and Faraahi, A., 2011, September. An anomaly-based method for DDoS attacks detection using RBF neural networks. In Proceedings of the International Conference on Network and Electronics Engineering (Vol. 11, pp. 44-48).
     \bibitem{empirical_evaluation}Bhuyan, M.H., Bhattacharyya, D.K. and Kalita, J.K., 2015. An empirical evaluation of information metrics for low-rate and high-rate DDoS attack detection. Pattern Recognition Letters, 51, pp.1-7.
+    \bibitem{chnage_point_monitoring}H. Wang, D. Zhang, and K. G. Shin, “Change-point monitoring for the detection of DoS attacks,” IEEE Trans. Dependable Secur. Comput., vol. 1, no. 4, pp. 193–208, 2004.
     \bibitem{cloudflare_DDoS}\url{https://www.cloudflare.com/learning/ddos/application-layer-ddos-attack/}
     \bibitem{cloudflare_syn_flood}\url{https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/}
     \bibitem{two_layer_approach__DDOS}Toklu, S. and Şimşek, M., 2018. Two-Layer Approach for Mixed High-Rate and Low-Rate Distributed Denial of Service (DDoS) Attack Detection and Filtering. Arabian Journal for Science and Engineering, 43(12), pp.7923-7931.
